@@ -54,8 +54,23 @@ public class DataStore {
     }
 
     // Create engine 
+    public synchronized void createEngine(engine engine) throws IllegalArgumentException {
+        findEngine(engine.getName()).ifPresentOrElse(
+            original -> {
+                throw new IllegalArgumentException(
+                    String.format("The engine name\"%s\" is not unique", engine.getName()));
+            }, () -> engines.add(engine));
+    }
 
     // Delete producer with given name
+    public synchronized void deleteProducer(String name) throws IllegalArgumentException {
+        findProducer(name).ifPresentOrElse(
+            producers::remove,
+            () -> {
+                throw new IllegalArgumentException(
+                    String.format("The producer with name \"%s\" doesnt exist", name));
+            });
+    }
 
     // Delete engine with given name
 
