@@ -11,6 +11,10 @@ import lombok.ToString;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 // Class for engine producer.
 // Conatins name of the company, it's foundation year and tax id number NIP.
 @Getter
@@ -20,8 +24,11 @@ import java.io.Serializable;
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @ToString
 @EqualsAndHashCode
+@Entity
+@Table(name = "producers")
 public class Producer implements Serializable{
     // Company's name
+    @Id
     private String name;
 
     // Company's nip number

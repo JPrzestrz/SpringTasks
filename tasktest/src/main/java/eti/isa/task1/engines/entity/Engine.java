@@ -9,6 +9,11 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.Builder;
 
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 import java.io.Serializable;
 
 @Getter
@@ -18,10 +23,9 @@ import java.io.Serializable;
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @ToString
 @EqualsAndHashCode
+@Entity
+@Table(name = "engines")
 public class Engine implements Serializable {
-
-    // Engine's identification
-    private int id;
 
     // Engine's name
     private String name;
@@ -32,6 +36,8 @@ public class Engine implements Serializable {
     // Engine's production year
     private int year;
 
+    @ManyToOne
+    @JoinColumn(name = "producer")
     private Producer producer;
 
 }

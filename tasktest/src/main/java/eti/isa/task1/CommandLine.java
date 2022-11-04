@@ -28,7 +28,7 @@ public class CommandLine implements CommandLineRunner {
         Producer producer = new Producer("Audi",123,1950);
         producerService.create(producer);
 
-        Engine engine = new Engine(1,"TFSI",1999,2010,producer);
+        Engine engine = new Engine("TFSI",1999,2010,producer);
         engineService.create(engine);
 
         while (true) {
@@ -75,8 +75,6 @@ public class CommandLine implements CommandLineRunner {
     public void addEngine() {
         Scanner sc=new Scanner(System.in);
         Engine engine = new Engine();
-        System.out.println("Input engine id:");
-        engine.setId(sc.nextInt());
         System.out.println("Input engine name:");
         engine.setName(sc.next());
         System.out.println("Input engine capacity:");
