@@ -10,8 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
-import eti.isa.task1.engines.entity.Engine;
+import eti.isa.task1.engines.entity.Producer;
 
 @Getter
 @Setter
@@ -20,19 +19,17 @@ import eti.isa.task1.engines.entity.Engine;
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @ToString
 @EqualsAndHashCode
-public class GetEngineResponse {
-    
-    private String name;
-    private int capacity;
-    private int year;
-    private String producer;
+public class GetProducerResponse {
 
-    public static Function<Engine, GetEngineResponse> entityToDtoMapper() {
-        return engine -> GetEngineResponse.builder()
-            .name(engine.getName())
-            .capacity(engine.getCapacity())
-            .year(engine.getYearz())
-            .producer(engine.getProducer().getName())
-            .build();
+    private String name;
+    private int nip;
+    private int year;
+
+    public static Function<Producer, GetProducerResponse> entityToDtoMapper() {
+        return producer -> GetProducerResponse.builder()
+                .name(producer.getName())
+                .nip(producer.getNip())
+                .year(producer.getYearz())
+                .build();
     }
 }

@@ -1,6 +1,7 @@
 package eti.isa.task1;
 
 import java.util.Scanner;
+import java.util.function.ToLongFunction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -28,7 +29,7 @@ public class CommandLine implements CommandLineRunner {
         Producer producer = new Producer("Audi",123,1950);
         producerService.create(producer);
 
-        Engine engine = new Engine("TFSI",1999,2010,producer);
+        Engine engine = new Engine(Long.valueOf(0),"TFSI",1999,2010,producer);
         engineService.create(engine);
 
         while (true) {
@@ -67,7 +68,7 @@ public class CommandLine implements CommandLineRunner {
         System.out.println("Input nip:");
         producer.setNip(sc.nextInt());
         System.out.println("Input producer year:");
-        producer.setYear(sc.nextInt());
+        producer.setYearz(sc.nextInt());
         producerService.create(producer);
         
     }
@@ -75,12 +76,14 @@ public class CommandLine implements CommandLineRunner {
     public void addEngine() {
         Scanner sc=new Scanner(System.in);
         Engine engine = new Engine();
+        System.out.println("Input engine id:");
+        engine.setId(sc.nextLong());
         System.out.println("Input engine name:");
         engine.setName(sc.next());
         System.out.println("Input engine capacity:");
         engine.setCapacity(sc.nextInt());
         System.out.println("Input engine year:");
-        engine.setYear(sc.nextInt());
+        engine.setYearz(sc.nextInt());
 
         System.out.println("Input engine producer name:");
         String producerName = sc.next();

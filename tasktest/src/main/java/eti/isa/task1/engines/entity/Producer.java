@@ -27,6 +27,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "producers")
 public class Producer implements Serializable{
+    
     // Company's name
     @Id
     private String name;
@@ -35,6 +36,6 @@ public class Producer implements Serializable{
     private int nip;
 
     // Company's foundation year
-    private int year;
+    private int yearz;
 
 }

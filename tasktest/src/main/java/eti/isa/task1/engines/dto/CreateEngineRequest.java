@@ -33,7 +33,7 @@ public class CreateEngineRequest {
         return request -> Engine.builder()
             .name(request.getName())
             .capacity(request.getCapacity())
-            .year(request.getYear())
+            .yearz(request.getYear())
             .producer(producerFunction.apply(request.getProducer()))
             .build();
     }

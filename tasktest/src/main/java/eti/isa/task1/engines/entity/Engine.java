@@ -10,6 +10,7 @@ import lombok.ToString;
 import lombok.Builder;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -27,6 +28,9 @@ import java.io.Serializable;
 @Table(name = "engines")
 public class Engine implements Serializable {
 
+    @Id
+    private Long id;
+    
     // Engine's name
     private String name;
 
@@ -34,7 +38,7 @@ public class Engine implements Serializable {
     private int capacity;
 
     // Engine's production year
-    private int year;
+    private int yearz;
 
     @ManyToOne
     @JoinColumn(name = "producer")

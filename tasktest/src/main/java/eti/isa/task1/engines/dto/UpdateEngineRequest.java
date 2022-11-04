@@ -1,6 +1,6 @@
 package eti.isa.task1.engines.dto;
 
-import java.util.function.Function;
+import java.util.function.BiFunction;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -20,19 +20,16 @@ import eti.isa.task1.engines.entity.Engine;
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @ToString
 @EqualsAndHashCode
-public class GetEngineResponse {
+public class UpdateEngineRequest {
     
-    private String name;
     private int capacity;
     private int year;
-    private String producer;
 
-    public static Function<Engine, GetEngineResponse> entityToDtoMapper() {
-        return engine -> GetEngineResponse.builder()
-            .name(engine.getName())
-            .capacity(engine.getCapacity())
-            .year(engine.getYearz())
-            .producer(engine.getProducer().getName())
-            .build();
+    public static BiFunction<Engine, UpdateEngineRequest, Engine> dtoToEntityUpdater() {
+        return (engine, request) -> {
+            engine.setCapacity(request.getCapacity());
+            engine.setYearz(request.getYear());
+            return engine;
+        };
     }
 }
