@@ -1,46 +1,20 @@
 package eti.isa.task1.engines.repository;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
-import eti.isa.task1.repository.Repository;
 import eti.isa.task1.engines.entity.Engine;
-import eti.isa.task1.datastore.DataStore;
+import eti.isa.task1.engines.entity.Producer;
 
-@org.springframework.stereotype.Repository
-public class EngineRepository implements Repository<Engine, String>{
+@Repository
+public interface EngineRepository extends JpaRepository<Engine, Long>{
     
-    private final DataStore storage;
-
-    @Autowired
-    public EngineRepository(DataStore storage){
-        this.storage = storage;
-    }
-
-    @Override
-    public Optional<Engine> find(String name) {
-        return storage.findEngine(name);
-    }
-
-    @Override
-    public List<Engine> findAll() {
-        return storage.findAllEngines();
-    }
-
-    @Override
-    public void create(Engine entity) {
-        storage.createEngine(entity);
-    }
-
-    @Override
-    public void update(Engine entity){
-        storage.updateEngine(entity);
-    }
-
-    @Override
-    public void delete(Engine entity) {
-        storage.deleteEngine(entity.getName());
-    }
+    Optional<Engine> findByName(String name);
+    Optional<Engine> findById(Long id);
+    List<Engine> findAll();
+    List<Engine> findAllByProducer(Producer producer);
+    Optional<Engine> findByIdAndProducer(Long id, Producer producer);
 }

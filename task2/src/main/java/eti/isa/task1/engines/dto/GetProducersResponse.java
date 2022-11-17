@@ -21,7 +21,7 @@ import lombok.ToString;
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @ToString
 @EqualsAndHashCode
-public class GetEnginesResponse {
+public class GetProducersResponse {
     
     @Getter
     @Setter
@@ -30,23 +30,22 @@ public class GetEnginesResponse {
     @AllArgsConstructor(access = AccessLevel.PUBLIC)
     @ToString
     @EqualsAndHashCode
-    public static class Engine {
+    public static class Producer {
         private String name;
     }
 
     @Singular
-    private List<Engine> engines; 
+    private List<Producer> producers; 
 
-    public static Function<Collection<eti.isa.task1.engines.entity.Engine>,GetEnginesResponse> entityToDtoMapper() {
-        return engines -> {
-            GetEnginesResponseBuilder response = GetEnginesResponse.builder();
-            engines.stream()
-                    .map(engine -> Engine.builder()
-                        .name(engine.getName())
+    public static Function<Collection<eti.isa.task1.engines.entity.Producer>,GetProducersResponse> entityToDtoMapper() {
+        return producers -> {
+            GetProducersResponseBuilder response = GetProducersResponse.builder();
+            producers.stream()
+                    .map(producer -> Producer.builder()
+                        .name(producer.getName())
                         .build())
-                    .forEach(response::engine);
+                    .forEach(response::producer);
             return response.build();
         };
     }
-
 }

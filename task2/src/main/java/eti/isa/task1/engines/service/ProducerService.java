@@ -9,6 +9,8 @@ import eti.isa.task1.engines.entity.Producer;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 @Service
 public class ProducerService {
     
@@ -20,19 +22,26 @@ public class ProducerService {
     }
 
     public Optional<Producer> find(String name) {
-        return repository.find(name);
+        return repository.findById(name);
     }
 
     public List<Producer> findAll() {
         return repository.findAll();
     }
 
-    public void create(Producer producer) {
-        repository.create(producer);
+    @Transactional
+    public Producer create(Producer producer) {
+        return repository.save(producer);
     }
 
+    @Transactional
     public void delete(Producer producer) {
         repository.delete(producer);
+    }
+
+    @Transactional
+    public void update(Producer producer) {
+        repository.save(producer);
     }
 
 }
