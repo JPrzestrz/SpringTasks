@@ -1,0 +1,39 @@
+
+### Get All Producers
+GET http://localhost:8082/api/producers
+
+### Post New Producer With Given Details 
+POST http://localhost:8081/api/producers
+Content-Type: application/json
+
+{
+    "name":"Ferrari",
+    "nip": 68875,
+    "yearz": 1947
+}
+
+### 
+GET http://localhost:8081/api/producers/Ferrari
+
+
+### Post New Producer With Given Details 
+POST http://localhost:8082/api/producers
+Content-Type: application/json
+
+{
+    "name":"Bmw",
+    "nip": 52136,
+    "yearz": 1916
+}
+
+### Delete Producer By Given Name
+DELETE http://localhost:8080/api/producers/Bmw
+### Put Producer
+PUT http://localhost:8081/api/producers/Audi
+Content-Type: application/json
+
+{
+    "nip": 123456,
+    "yearz": 2022
+}
+

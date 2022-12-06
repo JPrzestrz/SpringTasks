@@ -1,0 +1,55 @@
+
+### Get All Producers
+GET http://localhost:8080/api/producers
+### Get All Producers
+GET http://localhost:8080/api/producers/Bmw/engines
+### Get All Producers
+GET http://localhost:8080/api/producers/Bmw/engines/1
+
+### Get All Engines
+GET http://localhost:8080/api/engines
+### 
+GET http://localhost:8080/api/producers/Bmw
+
+### Post New Producer With Given Details 
+POST http://localhost:8080/api/producers
+Content-Type: application/json
+
+{
+    "name":"Bmw",
+    "nip":1111,
+    "yearz":1900
+}
+### Add Engine
+POST http://localhost:8080/api/producers/Bmw/engines/
+Content-Type: application/json
+
+{
+    "name":"M52B28(2)",
+    "capacity": 2798,
+    "yearz": 2005,
+    "producer":"Bmw"
+}
+### Edit Engine
+PUT http://localhost:8080/api/producers/Bmw/engines/3
+Content-Type: application/json
+
+{
+    "name":"2.0 Turbo (New)",
+    "capacity": 1998,
+    "yearz": 1998,
+    "producer":"Bmw"
+}
+### Delete Engine
+DELETE http://localhost:8080/api/producers/Bmw/engines/4
+### Put Producer
+PUT http://localhost:8080/api/producers/Bmw
+Content-Type: application/json
+
+{
+    "nip": 123456,
+    "yearz": 2022
+}
+
+### Delete Producer By Given Name
+DELETE http://localhost:8080/api/producers/Bmw
