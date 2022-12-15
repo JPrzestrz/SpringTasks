@@ -72,3 +72,17 @@ footer {
     background-color: #556ad4;
     color:white;
 }
+
+.form-div {
+    text-align: center;
+}
+
+.post-form {
+    background-color: #5f76e9;
+    height: auto;
+    width: 100%;
+}
+
+.label {
+    text-align: right;
+}
