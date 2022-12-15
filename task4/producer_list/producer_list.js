@@ -29,6 +29,7 @@ function createTableRow(producer) {
     let tr = document.createElement('tr');
     tr.appendChild(createTextCell(producer));
     tr.appendChild(createLinkCell('click', '../producer_view/producer_view.html?producer=' + producer));
+    tr.appendChild(createLinkCell('click', '../producer_edit/producer_edit.html?producer=' + producer));
     tr.appendChild(createButtonCell('delete', () => deleteProducer(producer)));
     return tr;
 }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="Project for ISA"/>
+        <title>Engines&Producers</title>
+        <link rel="stylesheet" href="../style.css"/>
+        <link rel="stylesheet" href="style.css"/>
+        <script src="../script.js" defer="defer"></script>
+        <script type="module" src="producer_view.js" defer="defer"></script>
+    </head>
+    <body>
+       <div class="container">
+            <header><h1>Producers & Engines</h1></header>
+
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="../index.html">HOME</a></li>
+                    <li><a href="../producer_list/producers.html">PRODUCERS LIST</a></li>
+                </ul>
+            </nav>
+
+            <section class="main-section">
+                <article class="text--justified">
+                    <header><h2>PRODUCER DETAILS<br/></h2></header>
+                    <section>
+                        <div class="details-grid">
+                            <label for="name"><b>Name: </b></label><span id="name">name</span><br/>
+                            <label for="nip">Nip: </label><span id="nip">nip</span><br/>
+                            <label for="yearz">Year: </label><span id="yearz">yearz</span><br/>
+                        </div>
+                    </section>
+                    <section>
+                        <header><h3>Engines<br/></h3></header>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>view</th>
+                                    <th>edit</th>
+                                    <th>delete</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                <tr>
+                                    <td>name</td>
+                                    <td><a href="#">view</a></td>
+                                    <td><a href="#">edit</a></td>
+                                    <td>
+                                        <button class="ui-button ui-control">delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </section>
+                    
+                </article>
+            </section>
+
+            <footer>
+                Copyright &copy; 2022; Jakub Przestrzelski JPrzestrz
+            </footer>
+       </div>
+    </body>
+</html>
