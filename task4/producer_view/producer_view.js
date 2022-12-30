@@ -11,6 +11,7 @@ import {getBackendUrl} from '../js/configuration.js';
 window.addEventListener('load', () => {
     fetchAndDisplayProducer();
     fetchAndDisplayEngines();
+    passProducer();
 });
 
 function fetchAndDisplayEngines() {
@@ -32,13 +33,22 @@ function displayEngines(engines) {
     })
 }
 
+function passProducer() {
+    let tableBody = document.getElementById('tab');
+    clearElementChildren(tableBody);
+    let tr = document.createElement('tr');
+    tr.appendChild(createLinkCell('Add engine', 'add_engine/add_engine.html?producer='
+        + getParameterByName('producer')));
+    tableBody.appendChild(tr);
+}
+
 function createTableRow(engine) {
     let tr = document.createElement('tr');
     tr.appendChild(createTextCell(engine.name));
     tr.appendChild(createLinkCell('view', '../engine_view/engine_view.html?producer='
-        + getParameterByName('user') + '&engine=' + engine.id));
+        + getParameterByName('producer') + '&engine=' + engine.id));
     tr.appendChild(createLinkCell('edit', '../engine_edit/engine_edit.html?producer='
-        + getParameterByName('user') + '&engine=' + engine.id));
+        + getParameterByName('producer') + '&engine=' + engine.id));
     tr.appendChild(createButtonCell('delete', () => deleteEngine(engine.id)));
     return tr;
 }
