@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="Project for ISA"/>
+        <title>Engines&Producers</title>
+        <link rel="stylesheet" href="../style.css"/>
+        <script src="../script.js" defer="defer"></script>
+        <script type="module" src="producer_edit.js" defer="defer"></script>
+    </head>
+    <body>
+       <div class="container">
+            <header><h1>Producers & Engines</h1></header>
+
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="../index.html">HOME</a></li>
+                    <li><a href="../producer_list/producers.html">PRODUCERS LIST</a></li>
+                </ul>
+            </nav>
+
+            <section class="main-section">
+                <article class="text--justified">
+                    <header>
+                        <h2>PRODUCER EDIT<br/></h2>
+                    </header>
+                    <div class="form-div">
+                        <form class="character__form" id="infoForm">
+                            <table class="post-form">
+                                <tr>
+                                    <td><label for="name"><b>Name: </b></label></td>
+                                    <td><span id="name">name</span></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="nip">Nip: </label></td>
+                                    <td><input class="ui-control ui-input" id="nip" name="nip" type="number"/></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="year">Year: </label></td>
+                                    <td><input class="ui-control ui-input" id="year" name="year" type="number"/></td>
+                                </tr>
+                            </table>
+                            <input class="ui-control ui-button" type="submit" name="Update"/>
+                        </form>
+                    </div>
+                </article>
+            </section>
+
+            <footer>
+                Copyright &copy; 2022; Jakub Przestrzelski GitHub:JPrzestrz
+            </footer>
+       </div>
+    </body>
+</html>
