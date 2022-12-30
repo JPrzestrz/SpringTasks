@@ -6,7 +6,7 @@
         <title>Engines&Producers</title>
         <link rel="stylesheet" href="../../style.css"/>
         <script src="../../script.js" defer="defer"></script>
-        <script type="module" src="add_producer.js" defer="defer"></script>
+        <script type="module" src="add_engine.js" defer="defer"></script>
     </head>
     <body>
        <div class="container">
@@ -15,25 +15,26 @@
             <nav class="nav-bar">
                 <ul>
                     <li><a href="../../index.html">HOME</a></li>
-                    <li><a class="here" href="../producers.html">PRODUCERS LIST</a></li>
+                    <li><a href="../../producer_list/producers.html">PRODUCERS LIST</a></li>
                 </ul>
             </nav>
 
             <section class="main-section">
                 <article class="text--justified">
                     <header>
-                        <h2>ADD PRODUCER<br/></h2>
+                        <h2>ADD ENGINE<br/></h2>
                     </header>
                     <div class="form-div">
                         <form class="character__form" id="infoForm">
                             <table class="post-form">
                                 <tr>
+                                    <!--...-->
                                     <td class="label"><label for="name">Name:</label></td>
                                     <td><input class="ui-control ui-input" id="name" name="name"/><br/></td>
                                 </tr>
                                 <tr>
-                                    <td class="label"><label for="nip">Nip:</label></td>
-                                    <td><input class="ui-control ui-input" id="nip" name="nip" type="number"/><br/></td>
+                                    <td class="label"><label for="capacity">Capacity:</label></td>
+                                    <td><input class="ui-control ui-input" id="capacity" name="capacity" type="number"/><br/></td>
                                 </tr>
                                 <tr>
                                     <td class="label"><label for="yearz">Year:</label></td>
@@ -43,10 +44,8 @@
                             <input class="ui-control ui-button" type="submit" name="Post"/><br/>
                         </form>
                     </div>
-                    
                 </article>
             </section>
-
             <footer>
                 Copyright &copy; 2022; Jakub Przestrzelski GitHub:JPrzestrz
             </footer>
