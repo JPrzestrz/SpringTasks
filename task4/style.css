@@ -86,3 +86,7 @@ footer {
 .label {
     text-align: right;
 }
+
+a:link {
+    text-decoration: none;
+  }
