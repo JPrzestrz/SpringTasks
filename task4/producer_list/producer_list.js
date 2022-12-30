@@ -9,7 +9,9 @@ window.addEventListener('load', () => {
 function fetchAndDisplayProducers() {
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
-        displayProducers(JSON.parse(this.responseText))
+        if (this.readyState === 4 && this.status === 202) {
+            displayProducers(JSON.parse(this.responseText))
+        }
     };
     xhttp.open("GET", getBackendUrl() +'/api/producers', true);
     xhttp.send();
